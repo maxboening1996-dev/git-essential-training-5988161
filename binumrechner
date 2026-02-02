@@ -1,0 +1,28 @@
+from math import *
+
+def bit_umrechner(number:int):
+
+    binarfolge = [16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 0]
+    ausgabe:str = ""
+    number = int(number)
+    number_og:int = number
+
+       
+    if number > 32768 or number < 0:
+          return print("Wert ungültig. Bitte gib einen Wert zwischen 0 und 32768 ein")
+    for bit in binarfolge:
+        if bit > number:
+             ausgabe = ausgabe + "0"
+        else:
+            ausgabe = ausgabe + "1"
+            number = number - bit
+
+    print(f"Die Dezimalzahl {number_og} ist in Binärschreibweise {ausgabe.lstrip("0")}")
+
+
+while True:
+    try:
+        (bit_umrechner(int(input("Gib eine Dezimalzahl ein: "))))
+        break
+    except ValueError:
+        print("Ungültige Eingabe. Bitte versuche es erneut.")
