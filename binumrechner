@@ -20,7 +20,7 @@ def bit_umrechner(number:int):
     print(f"Die Dezimalzahl {number_og} ist in Binärschreibweise {ausgabe.lstrip("0")}")
 
 
-while True:
+while True: # Testkommentar
     try:
         (bit_umrechner(int(input("Gib eine Dezimalzahl ein: "))))
         break
